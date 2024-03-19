@@ -11,42 +11,48 @@ An API that converts from a crypto from this:
 
 ## List of endpoints with parameters (see below for requirements)
 
-Endpoints and Parameters: Describe 1-3 endpoints. If you have one endpoint, include at least 3 parameters. If you have two endpoints, include at least 2 parameters. If you have 3 endpoints, include at least 1 parameter.
 Note: If you want to keep it simple, these endpoints could all be GET methods.
 
-GET `api/converter`
-
-```JSON
-{
-    "amount": 1,
-    "from": "validCoins",
-    "to": "validCoins",
-}
-```
+GET `api/convertCurrency/json?from={ValidCoin}&to={ValidCoin}&amount={number}`
 
 ## Description of resources - formatted as JSON
 
 Resources: one or two resources (think object instance in an object-oriented programming language)
 
-### Bitcoin Resource
+### Crypto Currency Resource
+
+convertCurrency
 
 ```JSON
 {
-    "type": "bitcoin",
+    "type": "string",
     "id": "1",
+    "name": "DogeCoin",
     "amount": "1.0",
 }
 ```
-
-### Dogecoin Resource
-
-```JSON
-{
-    "type": "Dogecoin",
-    "id": "2",
-    "amount": "1.0",
-}
-```
-
 
 ## Sample request with sample response
+
+The API request looks like this:
+
+```JSON
+GET `api/convertCurrency`
+
+{
+    "amount": 1,
+    "from": "DogeCoin",
+    "to": "Bitcoint",
+}
+```
+
+A successful response looks like this:
+
+```JSON
+{
+    "amountConverted": .5,
+    "from": "DogeCoin",
+    "to": "Bitcoint",
+}
+
+```
