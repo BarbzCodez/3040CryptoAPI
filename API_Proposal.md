@@ -2,33 +2,38 @@
 
 ## API description
 
-An API that converts from a crypto from this:
+An API that converts from one crypto currency to a different currency.
+
+Here is a list of valid currencies:
 
 - BitCoin
 - Dogecoin.
 - American Dollar.
 - Canadian Dollar.
 
+when we refer to a {validCurrency}, it has to be the same as the one on the list
+
 ## List of endpoints with parameters (see below for requirements)
 
-Note: If you want to keep it simple, these endpoints could all be GET methods.
+> WHICH ONE TO USE
 
 GET `api/convertCurrency/json?from={ValidCoin}&to={ValidCoin}&amount={number}`
 
 ## Description of resources - formatted as JSON
 
-Resources: one or two resources (think object instance in an object-oriented programming language)
-
 ### Crypto Currency Resource
 
-convertCurrency
+The response will have 3 parameters:
+
+- **currency** (string): the name of the currency that you converted had the amount the original amount.
+- **amountConverted** (number): with the amount converted  to the currency.
+
+Example:
 
 ```JSON
 {
-    "type": "string",
-    "id": "1",
-    "name": "DogeCoin",
-    "amount": "1.0",
+    "currency": "DogeCoin",
+    "amountConverted": 0.5,
 }
 ```
 
@@ -36,23 +41,14 @@ convertCurrency
 
 The API request looks like this:
 
-```JSON
-GET `api/convertCurrency`
-
-{
-    "amount": 1,
-    "from": "DogeCoin",
-    "to": "Bitcoint",
-}
-```
+GET `api/convertCurrency/json?from=DogeCoin&to=Bitcoin&amount=1`
 
 A successful response looks like this:
 
 ```JSON
 {
-    "amountConverted": .5,
+    "amountConverted": 0.5,
     "from": "DogeCoin",
-    "to": "Bitcoint",
+    "to": "Bitcoin",
 }
-
 ```
