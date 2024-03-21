@@ -8,7 +8,7 @@ Below is a list of supported currencies that can be used as the **to** and **fro
 
 - 3040Coin.
 - BitCoin.
-- Dogecoin.
+- DogeCoin.
 - American Dollar.
 - Canadian Dollar.
 
