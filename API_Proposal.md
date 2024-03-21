@@ -2,38 +2,44 @@
 
 ## API description
 
-An API that converts from one crypto currency to a different currency.
+This document describes an API that converts one type of currency to a different type of currency. It includes a single GET endpoint that requires 3 parameters. These parameters are the currency that is being converted to and from, and also the amount of currency that is being converted. This API will return a JSON formatted string that includes the converted currency value, and also the to and from parameters. Below is a list of supported currencies that can be used as the to and from parameters:
 
-Here is a list of valid currencies:
-
+- 3040Coin
 - BitCoin
 - Dogecoin.
 - American Dollar.
 - Canadian Dollar.
 
-when we refer to a {validCurrency}, it has to be the same as the one on the list
+when we refer to a {validCoin}, it has to be the same as one of the items in the list
 
-## List of endpoints with parameters (see below for requirements)
+## List of endpoints with parameters 
 
-> WHICH ONE TO USE
+### convertCurrency Endpoint
 
 GET `api/convertCurrency/json?from={ValidCoin}&to={ValidCoin}&amount={number}`
 
+The parameters are:
+- from: must be a string of type {ValidCoin}
+- to: must be a string of type {ValidCoin}
+- amount: must be number 
+
 ## Description of resources - formatted as JSON
 
-### Crypto Currency Resource
+### convertCurrency Resource
 
 The response will have 3 parameters:
 
-- **currency** (string): the name of the currency that you converted had the amount the original amount.
-- **amountConverted** (number): with the amount converted  to the currency.
+- **amountConverted** (number): The value of the currency after it has been converted to the currency of the *to* parameter.
+- **from** (string): The currency type that is being converted. This will be a {validCoin} type.
+- **to** (string): The currency type that the *from* parameter is being converted into. This will be a {validCoin} type.
 
 Example:
 
 ```JSON
 {
-    "currency": "DogeCoin",
-    "amountConverted": 0.5,
+    "amountConverted": 2,
+    "from": "3040Coin",
+    "to": "Bitcoin",
 }
 ```
 
