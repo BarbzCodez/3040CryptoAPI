@@ -37,6 +37,11 @@ Example:
 }
 ```
 
+
+- **amount** (number): The amount of currency you have
+- **from** (string): The type of currency you currently have.
+- **to** (string): The type of currency you are converting to.
+
 ## Sample request with sample response
 
 The API request looks like this:
