@@ -18,7 +18,7 @@ Below is a list of supported currencies that can be used as the **to** and **fro
 
 ### convertCurrency Endpoint
 
-GET `api/convertCurrency/json?from={ValidCoin}&to={ValidCoin}&amount={number}`
+GET `api/convertCurrency?from={ValidCoin}&to={ValidCoin}&amount={number}`
 
 The parameters are:
 
@@ -50,7 +50,7 @@ Example:
 
 The API request looks like this:
 
-GET `api/convertCurrency/json?from=DogeCoin&to=Bitcoin&amount=1`
+GET `api/convertCurrency?from=DogeCoin&to=Bitcoin&amount=1`
 
 A successful response looks like this:
 
