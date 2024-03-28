@@ -12,18 +12,18 @@ Below is a list of supported currencies that can be used as the **to** and **fro
 - American Dollar.
 - Canadian Dollar.
 
-> When we refer to a {validCoin}, it has to be the same as one of the items in the list
+> When we refer to a {validCurrency}, it has to be the same as one of the items in the list
 
 ## List of Endpoints with Parameters
 
 ### convertCurrency Endpoint
 
-GET `api/convertCurrency?from={ValidCoin}&to={ValidCoin}&amount={number}`
+GET `convertCurrency?from={validCurrency}&to={validCurrency}&amount={number}`
 
 The parameters are:
 
-- **from**: must be a string of type {ValidCoin}.
-- **to**: must be a string of type {ValidCoin}.
+- **from**: must be a string of type {validCurrency}.
+- **to**: must be a string of type {validCurrency}.
 - **amount**: must be number.
 
 ## Description of Resources - formatted as JSON
@@ -33,8 +33,8 @@ The parameters are:
 The response will have 3 parameters:
 
 - **amountConverted** (number): The value of the currency after it has been converted to the currency of the *to* parameter.
-- **from** (string): The currency type that is being converted. This will be a {validCoin} type.
-- **to** (string): The currency type that the *from* parameter is being converted into. This will be a {validCoin} type.
+- **from** (string): The currency type that is being converted. This will be a {validCurrency} type.
+- **to** (string): The currency type that the *from* parameter is being converted into. This will be a {validCurrency} type.
 
 Example:
 
@@ -50,7 +50,7 @@ Example:
 
 The API request looks like this:
 
-GET `api/convertCurrency?from=DogeCoin&to=Bitcoin&amount=1`
+GET `convertCurrency?from=DogeCoin&to=Bitcoin&amount=1`
 
 A successful response looks like this:
 
